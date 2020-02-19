@@ -1,17 +1,19 @@
 const form = document.querySelector(".js-form");
 const input = form.querySelector("input");
-const greeting = document.querySelector(".js - greeting");
+const greeting = document.querySelector(".js-greeting");
 
 const USER_LS = "currentUser",
   SHOWING_CN = "showing";
 
+function handleSubmit(event) {
+  event.preventDefault();
+  const currentValue = input.value;
+  console.log(currentValue);
+}
+
 function askForName() {
   form.classList.add(SHOWING_CN);
   form.addEventListener("submit", handleSubmit);
-}
-
-function hendleSubmit(event) {
-  event.preventDefault();
 }
 
 function paintGreeting(text) {
